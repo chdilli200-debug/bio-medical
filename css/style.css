@@ -68,3 +68,42 @@ button{
 button:hover{
     background:#0b5ed7;
 }
+.equipment{
+    padding:80px 40px;
+}
+
+.equipment h2{
+    text-align:center;
+    font-size:40px;
+    color:#0d6efd;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#0d6efd;
+}
+
+.card p{
+    color:#555;
+    margin-bottom:20px;
+    line-height:1.6;
+}
