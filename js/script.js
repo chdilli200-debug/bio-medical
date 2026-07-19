@@ -1,0 +1,1 @@
+console.log("Bio Medical Website Loaded Successfully");
