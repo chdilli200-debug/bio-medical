@@ -1,0 +1,63 @@
+/* Tablets */
+@media (max-width: 768px){
+
+    header{
+        flex-direction: column;
+        padding:20px;
+    }
+
+    nav{
+        margin-top:20px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0;
+    }
+
+    .hero{
+        padding:70px 20px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width:480px){
+
+    .logo{
+        font-size:22px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    button{
+        width:100%;
+    }
+
+    .equipment{
+        padding:50px 20px;
+    }
+
+    .equipment h2{
+        font-size:28px;
+    }
+
+}
