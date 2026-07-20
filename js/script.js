@@ -29,3 +29,20 @@ cards.forEach(card => {
     });
 
 });
+// Small vibration on buttons
+document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        if ("vibrate" in navigator) {
+            navigator.vibrate(20);
+        }
+    });
+});
+
+// Small vibration on cards
+document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+        if ("vibrate" in navigator) {
+            navigator.vibrate(15);
+        }
+    });
+});
