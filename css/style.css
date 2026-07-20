@@ -1,109 +1,434 @@
+/* ==========================================
+   MedTech Hub India - Version 2.0
+   style.css (Part 1)
+========================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#eef5fb;
+    font-family:'Poppins',sans-serif;
+    background:#f5f9ff;
+    color:#222;
+    line-height:1.6;
 }
 
+/* ==========================
+   Header
+========================== */
+
 header{
-    background:white;
+    width:100%;
+    height:80px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 60px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+    padding:0 8%;
+
+    background:#ffffff;
+
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:12px;
+
     color:#0d6efd;
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo i{
+    font-size:32px;
+}
+
+nav{
+    display:flex;
+    gap:35px;
 }
 
 nav a{
+
     text-decoration:none;
-    margin-left:25px;
+
     color:#333;
-    font-weight:bold;
+
+    font-weight:500;
+
+    transition:.3s;
+
 }
 
 nav a:hover{
+
     color:#0d6efd;
+
 }
 
+.menu-btn{
+
+    display:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+/* ==========================
+   Hero
+========================== */
+
 .hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     text-align:center;
-    padding:120px 20px;
+
+    padding:80px 10%;
+
+    background:linear-gradient(135deg,#0d6efd,#42a5ff);
+
+    color:white;
+
+}
+
+.hero-text{
+
+    max-width:850px;
+
 }
 
 .hero h1{
-    font-size:50px;
-    color:#0d6efd;
-    margin-bottom:20px;
+
+    font-size:60px;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
 }
 
 .hero p{
+
     font-size:22px;
-    color:#555;
-    max-width:700px;
-    margin:auto;
-    line-height:1.6;
-}
 
-button{
-    margin-top:40px;
-    background:#0d6efd;
-    color:white;
-    border:none;
-    padding:15px 35px;
-    font-size:18px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#0b5ed7;
-}
-.equipment{
-    padding:80px 40px;
-}
-
-.equipment h2{
-    text-align:center;
-    font-size:40px;
-    color:#0d6efd;
     margin-bottom:40px;
+
+    opacity:.95;
+
 }
 
-.cards{
+/* ==========================
+   Button
+========================== */
+
+.btn{
+
+    display:inline-block;
+
+    background:white;
+
+    color:#0d6efd;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+/* ==========================
+   Section Title
+========================== */
+
+section{
+
+    padding:90px 8%;
+
+}
+
+section h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:#0d6efd;
+
+    margin-bottom:60px;
+
+}
+/* ==========================================
+   Featured Equipment
+========================================== */
+
+.card-container{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
 }
 
 .card{
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    transition:.3s;
+
+    background:#ffffff;
+
+    padding:35px 30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
 }
 
 .card:hover{
-    transform:translateY(-8px);
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(13,110,253,.18);
+
+}
+
+.card i{
+
+    font-size:55px;
+
+    color:#0d6efd;
+
+    margin-bottom:20px;
+
 }
 
 .card h3{
+
+    font-size:24px;
+
     margin-bottom:15px;
-    color:#0d6efd;
+
 }
 
 .card p{
-    color:#555;
+
+    color:#666;
+
+    font-size:16px;
+
+}
+
+
+
+/* ==========================================
+   Categories
+========================================== */
+
+.categories{
+
+    background:#eef6ff;
+
+}
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.category{
+
+    background:white;
+
+    padding:30px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+}
+
+.category:hover{
+
+    background:#0d6efd;
+
+    color:white;
+
+    transform:translateY(-8px);
+
+}
+
+
+
+/* ==========================================
+   Articles
+========================================== */
+
+.article-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.article{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 22px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.article:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.article h3{
+
+    color:#0d6efd;
+
+    margin-bottom:15px;
+
+}
+
+.article p{
+
+    color:#666;
+
+}
+
+
+
+/* ==========================================
+   Footer
+========================================== */
+
+footer{
+
+    background:#0d6efd;
+
+    color:white;
+
+    text-align:center;
+
+    padding:60px 8%;
+
+}
+
+footer h2{
+
+    font-size:34px;
+
     margin-bottom:20px;
-    line-height:1.6;
+
+}
+
+footer p{
+
+    max-width:700px;
+
+    margin:15px auto;
+
+    opacity:.95;
+
+}
+
+
+
+/* ==========================================
+   Animation
+========================================== */
+
+.card,
+.article,
+.category{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
 }
