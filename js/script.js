@@ -46,3 +46,68 @@ document.querySelectorAll(".card").forEach(card => {
         }
     });
 });
+// Hero Animation
+
+gsap.from(".hero h1",{
+
+    y:80,
+
+    opacity:0,
+
+    duration:1.2,
+
+    ease:"power4.out"
+
+});
+
+gsap.from(".hero p",{
+
+    y:60,
+
+    opacity:0,
+
+    duration:1,
+
+    delay:.4,
+
+    ease:"power3.out"
+
+});
+
+gsap.from(".btn",{
+
+    scale:.5,
+
+    opacity:0,
+
+    duration:.8,
+
+    delay:.8,
+
+    ease:"back.out(1.8)"
+
+});
+gsap.from(".card",{
+
+    y:80,
+
+    opacity:0,
+
+    duration:1,
+
+    stagger:.15,
+
+    ease:"power3.out"
+
+});
+gsap.from("header",{
+
+    y:-100,
+
+    opacity:0,
+
+    duration:1,
+
+    ease:"power4.out"
+
+});
