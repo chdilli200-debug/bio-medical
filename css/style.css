@@ -479,3 +479,14 @@ html{
 .btn:active{
     transform:scale(.96);
 }
+.menu-btn{
+
+    transition:.3s;
+
+}
+
+.menu-btn.active{
+
+    transform:rotate(90deg);
+
+}
