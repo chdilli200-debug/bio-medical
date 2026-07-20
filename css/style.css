@@ -432,3 +432,50 @@ footer p{
     }
 
 }
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+.btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.35);
+    transform:skewX(-25deg);
+    transition:.6s;
+}
+
+.btn:hover::before{
+    left:120%;
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+.card:hover{
+    transform:translateY(-12px) scale(1.03);
+
+    box-shadow:
+        0 0 20px rgba(13,110,253,.25),
+        0 15px 40px rgba(13,110,253,.18);
+}
+
+.card:active,
+.btn:active{
+    transform:scale(.96);
+}
