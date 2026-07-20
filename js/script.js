@@ -89,25 +89,16 @@ gsap.from(".btn",{
 });
 gsap.from(".card",{
 
-    y:80,
+    y:60,
 
     opacity:0,
 
-    duration:1,
+    duration:0.8,
 
-    stagger:.15,
+    delay:1.2,
 
-    ease:"power3.out"
+    stagger:0.15,
 
-});
-gsap.from("header",{
-
-    y:-100,
-
-    opacity:0,
-
-    duration:1,
-
-    ease:"power4.out"
+    ease:"power2.out"
 
 });
