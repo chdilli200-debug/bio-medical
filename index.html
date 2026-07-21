@@ -3,75 +3,98 @@
 
 <head>
 
+    <!-- Character Encoding -->
     <meta charset="UTF-8">
 
+    <!-- Internet Explorer Compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO -->
     <title>BioMed Learn | Biomedical Engineering Learning Platform</title>
 
     <meta name="description"
-        content="BioMed Learn - Learn Biomedical Engineering with equipment guides, internship notes, troubleshooting, calculators and career resources.">
+          content="Learn Biomedical Engineering with equipment guides, internship notes, troubleshooting, biomedical calculators, interview questions and practical resources.">
 
     <meta name="keywords"
-        content="Biomedical Engineering, MRI, CT Scanner, Ventilator, ECG, Biomedical Internship">
+          content="Biomedical Engineering, MRI, CT Scan, Ventilator, Patient Monitor, Internship, Biomedical Equipment">
 
-    <meta name="author" content="Dilli">
+    <meta name="author"
+          content="BioMed Learn">
 
-    <meta name="theme-color" content="#0D6EFD">
+    <!-- Theme Color -->
+    <meta name="theme-color"
+          content="#0D6EFD">
 
-    <!-- Google Font -->
+    <!-- Favicon -->
+ <!--    <link rel="icon"
+          type="image/png"
+          href="images/favicon.png">
+-->
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
 
     <!-- Font Awesome -->
-
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- CSS -->
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet"
+          href="css/responsive.css">
 
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <link rel="stylesheet" href="css/animations.css">
+    <!-- Animation CSS -->
+    <link rel="stylesheet"
+          href="css/animations.css">
 
 </head>
 
 <body>
+    <!-- ==========================================
+     PROCESS BAR
+========================================== -->
+<div id="progress-bar"></div>
 
-<!-- ==========================
+
+<!-- ==========================================
      HEADER
-========================== -->
+========================================== -->
 
 <header class="header">
 
-    <div class="logo">
+    <a href="index.html"
+       class="logo">
 
         <i class="fa-solid fa-heart-pulse"></i>
 
         <span>BioMed Learn</span>
 
-    </div>
+    </a>
 
     <nav class="navbar">
 
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
 
         <a href="equipment.html">Equipment</a>
 
         <a href="internship.html">Internship</a>
 
-        <a href="notes.html">Notes</a>
-
         <a href="calculators.html">Calculators</a>
 
-        <a href="jobs.html">Jobs</a>
+        <a href="notes.html">Notes</a>
 
         <a href="about.html">About</a>
 
@@ -87,9 +110,9 @@
 
 </header>
 
-<!-- ==========================
-     HERO
-========================== -->
+<!-- ==========================================
+     HERO SECTION
+========================================== -->
 
 <section class="hero">
 
@@ -97,7 +120,9 @@
 
         <span class="hero-tag">
 
-            India's Biomedical Learning Platform
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            India's Smart Biomedical Learning Platform
 
         </span>
 
@@ -115,21 +140,27 @@
 
             Equipment Guides • Internship Notes • Troubleshooting •
 
-            Biomedical Calculators • Interview Questions
+            Biomedical Calculators • Viva Questions • Interview Preparation
 
         </p>
 
         <div class="hero-buttons">
 
-            <a href="equipment.html" class="btn btn-primary">
+            <a href="equipment.html"
+               class="btn btn-primary">
 
-                Explore Equipment
+                <i class="fa-solid fa-microscope"></i>
+
+                <span>Explore Equipment</span>
 
             </a>
 
-            <a href="internship.html" class="btn btn-outline">
+            <a href="internship.html"
+               class="btn btn-outline">
 
-                Internship Notes
+                <i class="fa-solid fa-notes-medical"></i>
+
+                <span>Internship Notes</span>
 
             </a>
 
@@ -138,19 +169,31 @@
     </div>
 
 </section>
-
-<!-- ==========================
-     SEARCH
-========================== -->
+<!-- ==========================================
+     SEARCH SECTION
+========================================== -->
 
 <section class="search-section">
+
+    <div class="section-title">
+
+        <h2>Search Biomedical Topics</h2>
+
+        <p>
+            Quickly find equipment, internship notes, troubleshooting guides,
+            biomedical calculators and more.
+        </p>
+
+    </div>
 
     <div class="search-box">
 
         <i class="fa-solid fa-magnifying-glass"></i>
 
-        <input type="text"
-               placeholder="Search Equipment, Notes, Internship...">
+        <input
+            type="text"
+            placeholder="Search MRI, Ventilator, ECG, Patient Monitor..."
+        >
 
         <button>
 
@@ -162,7 +205,6 @@
 
 </section>
 
-<!-- PART 2 STARTS HERE -->
 <!-- ==========================================
      FEATURED EQUIPMENT
 ========================================== -->
@@ -174,121 +216,232 @@
         <h2>Featured Equipment</h2>
 
         <p>
-            Learn the most important biomedical equipment used in hospitals.
+
+            Explore advanced biomedical equipment used in modern hospitals.
+
         </p>
 
     </div>
 
-   <div class="equipment-grid">
+    <div class="equipment-grid">
 
-    <div class="equipment-card">
+        <!-- MRI -->
 
-        <img src="images/mri.jpg" alt="MRI Scanner">
+        <div class="equipment-card">
 
-        <h3>MRI Scanner</h3>
+            <img src="images/mri.jpg" alt="MRI Scanner">
 
-        <p>Learn MRI principles, magnets, RF coils, image formation and preventive maintenance.</p>
+            <h3>MRI Scanner</h3>
 
-        <a href="equipment.html">Learn More →</a>
+            <p>
+
+                Learn MRI working principle, components,
+                applications, safety and troubleshooting.
+
+            </p>
+
+            <a href="mri.html">
+
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- CT -->
+
+        <div class="equipment-card">
+
+            <img src="images/ct-scanner.jpg" alt="CT Scanner">
+
+            <h3>CT Scanner</h3>
+
+            <p>
+
+                Understand CT imaging technology,
+                detector system and reconstruction process.
+
+            </p>
+
+            <a href="ct.html">
+
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- C Arm -->
+
+        <div class="equipment-card">
+
+            <img src="images/c-arm.jpg" alt="C Arm">
+
+            <h3>C-Arm</h3>
+
+            <p>
+
+                Study fluoroscopy principles,
+                image intensifier and surgical applications.
+
+            </p>
+
+            <a href="carm.html">
+
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- Cath Lab -->
+
+        <div class="equipment-card">
+
+            <img src="images/cath-lab.jpg" alt="Cath Lab">
+
+            <h3>Cath Lab</h3>
+
+            <p>
+
+                Cardiac catheterization system,
+                angiography workflow and maintenance.
+
+            </p>
+
+            <a href="cathlab.html">
+
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- Ventilator -->
+
+        <div class="equipment-card">
+
+            <img src="images/ventilator.jpg" alt="Ventilator">
+
+            <h3>Ventilator</h3>
+
+            <p>
+
+                Learn ventilation modes,
+                sensors, alarms and preventive maintenance.
+
+            </p>
+
+            <a href="ventilator.html">
+
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- Patient Monitor -->
+
+        <div class="equipment-card">
+
+            <img src="images/patient-monitor.jpg" alt="Patient Monitor">
+
+            <h3>Patient Monitor</h3>
+
+            <p>
+
+                ECG, SpO₂, NIBP,
+                Temperature and Respiratory monitoring.
+
+            </p>
+
+            <a href="patient-monitor.html">
+
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- Anaesthesia -->
+
+        <div class="equipment-card">
+
+            <img src="images/anaesthesia.jpg" alt="Anaesthesia Workstation">
+
+            <h3>Anaesthesia Workstation</h3>
+
+            <p>
+
+                Vaporizers, breathing circuits,
+                gas delivery and safety systems.
+
+            </p>
+
+            <a href="anaesthesia.html">
+
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- PET CT -->
+
+        <div class="equipment-card">
+
+            <img src="images/pet-ct.jpg" alt="PET CT">
+
+            <h3>PET-CT Scanner</h3>
+
+            <p>
+
+                Hybrid imaging system combining
+                metabolic and anatomical information.
+
+            </p>
+
+            <a href="petct.html">
+
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- Incubator -->
+
+        <div class="equipment-card">
+
+            <img src="images/incubator.jpg" alt="Infant Incubator">
+
+            <h3>Infant Incubator</h3>
+
+            <p>
+
+                Neonatal thermal care,
+                humidity control and patient safety.
+
+            </p>
+
+            <a href="incubator.html">
+
+                Learn More
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
 
     </div>
-
-    <div class="equipment-card">
-
-        <img src="images/ct.jpg" alt="CT Scanner">
-
-        <h3>CT Scanner</h3>
-
-        <p>Explore CT components, X-ray tube, detector system and troubleshooting.</p>
-
-        <a href="equipment.html">Learn More →</a>
-
-    </div>
-
-    <div class="equipment-card">
-
-        <img src="images/cathlab.jpg" alt="Cath Lab">
-
-        <h3>Cath Lab</h3>
-
-        <p>Cardiac catheterization system, fluoroscopy and maintenance guide.</p>
-
-        <a href="equipment.html">Learn More →</a>
-
-    </div>
-
-    <div class="equipment-card">
-
-        <img src="images/ventilator.jpg" alt="Ventilator">
-
-        <h3>ICU Ventilator</h3>
-
-        <p>Ventilation modes, alarms, calibration and preventive maintenance.</p>
-
-        <a href="equipment.html">Learn More →</a>
-
-    </div>
-
-    <div class="equipment-card">
-
-        <img src="images/anesthesia.jpg" alt="Anesthesia Machine">
-
-        <h3>Anesthesia Workstation</h3>
-
-        <p>Gas delivery system, vaporizers, breathing circuit and safety checks.</p>
-
-        <a href="equipment.html">Learn More →</a>
-
-    </div>
-
-    <div class="equipment-card">
-
-        <img src="images/carm.jpg" alt="C Arm">
-
-        <h3>C-Arm System</h3>
-
-        <p>Mobile fluoroscopy system used in orthopedics and surgery.</p>
-
-        <a href="equipment.html">Learn More →</a>
-
-    </div>
-
-    <div class="equipment-card">
-
-        <img src="images/incubator.jpg" alt="Neonatal Incubator">
-
-        <h3>Neonatal Incubator</h3>
-
-        <p>NICU incubator operation, temperature control and maintenance.</p>
-
-        <a href="equipment.html">Learn More →</a>
-
-    </div>
-
-    <div class="equipment-card">
-
-        <img src="images/monitor.jpg" alt="Patient Monitor">
-
-        <h3>Patient Monitor</h3>
-
-        <p>Multiparameter monitoring including ECG, SpO₂, NIBP, IBP and EtCO₂.</p>
-
-        <a href="equipment.html">Learn More →</a>
-
-    </div>
-    <div class="equipment-card">
-
-    <img src="images/pet-ct.jpg" alt="PET CT Scanner">
-
-    <h3>PET-CT Scanner</h3>
-
-    <p>Learn hybrid imaging technology, PET detector system, CT integration and preventive maintenance.</p>
-
-    <a href="equipment.html">Learn More →</a>
-
-</div>
-
-</div>
 
 </section>
 
@@ -302,103 +455,185 @@
 
         <h2>Explore Categories</h2>
 
+        <p>
+
+            Choose your learning area and build practical biomedical skills.
+
+        </p>
+
     </div>
 
     <div class="category-grid">
 
-    <div class="category-box">
-        🩻 Medical Imaging
+        <div class="category-box">
+            <i class="fa-solid fa-x-ray"></i>
+            <h3>Imaging Systems</h3>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-bed-pulse"></i>
+            <h3>ICU Equipment</h3>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h3>Operation Theatre</h3>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-flask-vial"></i>
+            <h3>Laboratory Devices</h3>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h3>Cardiology</h3>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-shield-virus"></i>
+            <h3>Sterilization</h3>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-calculator"></i>
+            <h3>Biomedical Calculators</h3>
+        </div>
+
+        <div class="category-box">
+            <i class="fa-solid fa-book-medical"></i>
+            <h3>Study Notes</h3>
+        </div>
+
     </div>
 
-    <div class="category-box">
-        ❤️ Critical Care
-    </div>
-
-    <div class="category-box">
-        🏥 Operation Theatre
-    </div>
-
-    <div class="category-box">
-        👶 NICU Equipment
-    </div>
-
-    <div class="category-box">
-        🧪 Laboratory Equipment
-    </div>
-
-    <div class="category-box">
-        🩺 Dialysis Systems
-    </div>
-
-    <div class="category-box">
-        ⚡ Biomedical Test Instruments
-    </div>
-
-    <div class="category-box">
-        🔧 Preventive Maintenance
-    </div>
-
-</div>
 </section>
-
 <!-- ==========================================
-     STATS
+     STATS SECTION
 ========================================== -->
 
 <section class="stats">
 
     <div class="stat-box">
 
-        <h2>100+</h2>
+        <i class="fa-solid fa-microscope"></i>
 
-        <p>Equipment Guides</p>
+        <h2 class="counter" data-target="100">0</h2>
 
-    </div>
-
-    <div class="stat-box">
-
-        <h2>500+</h2>
-
-        <p>Internship Notes</p>
+        <p>Biomedical Equipment</p>
 
     </div>
 
     <div class="stat-box">
 
-        <h2>50+</h2>
+        <i class="fa-solid fa-user-graduate"></i>
 
-        <p>Calculators</p>
+        <h2 class="counter" data-target="500">0</h2>
+
+        <p>Learning Resources</p>
 
     </div>
 
     <div class="stat-box">
 
-        <h2>1000+</h2>
+        <i class="fa-solid fa-calculator"></i>
 
-        <p>Students</p>
+        <h2 class="counter" data-target="50">0</h2>
+
+        <p>Biomedical Calculators</p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h2 class="counter" data-target="1000">0</h2>
+
+        <p>Students Learning</p>
 
     </div>
 
 </section>
 
 <!-- ==========================================
-     INTERNSHIP
+     INTERNSHIP SECTION
 ========================================== -->
 
 <section class="internship">
 
     <div class="internship-content">
 
-        <h2>Biomedical Internship Resources</h2>
+        <div class="section-title">
 
-        <p>
+            <h2>
 
-            Learn hospital equipment, preventive maintenance,
-            troubleshooting, documentation and practical knowledge.
+                Master Your Biomedical Internship
 
-        </p>
+            </h2>
 
-        <a href="internship.html" class="btn btn-primary">
+            <p>
+
+                Prepare yourself with real hospital experience,
+                troubleshooting guides, preventive maintenance,
+                logbook formats, viva questions and practical tips.
+
+            </p>
+
+        </div>
+
+        <div class="internship-features">
+
+            <div class="feature">
+
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                <h3>Troubleshooting</h3>
+
+                <p>
+
+                    Step-by-step fault finding procedures for
+                    biomedical equipment.
+
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <i class="fa-solid fa-book-medical"></i>
+
+                <h3>Internship Notes</h3>
+
+                <p>
+
+                    Daily logbook examples,
+                    equipment observations and practical notes.
+
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <h3>Preventive Maintenance</h3>
+
+                <p>
+
+                    Learn inspection,
+                    cleaning,
+                    calibration and safety checks.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <a href="internship.html"
+           class="btn btn-primary">
 
             Start Learning
 
@@ -408,8 +643,7 @@
 
 </section>
 
-<!-- PART 3 STARTS HERE -->
- <!-- ==========================================
+<!-- ==========================================
      LATEST ARTICLES
 ========================================== -->
 
@@ -417,9 +651,17 @@
 
     <div class="section-title">
 
-        <h2>Latest Articles</h2>
+        <h2>
 
-        <p>Recently added biomedical engineering learning resources.</p>
+            Latest Learning Articles
+
+        </h2>
+
+        <p>
+
+            Read practical biomedical engineering guides written for students.
+
+        </p>
 
     </div>
 
@@ -427,61 +669,130 @@
 
         <div class="article-card">
 
-            <h3>How MRI Scanner Works?</h3>
+            <img src="images/mri.jpg"
+                 alt="MRI">
 
-            <p>Understand MRI principles, magnets, RF coils and image formation in simple language.</p>
+            <h3>
 
-            <a href="#">Read Article →</a>
+                MRI Scanner Explained
+
+            </h3>
+
+            <p>
+
+                Learn MRI components,
+                working principle,
+                applications,
+                safety precautions and maintenance.
+
+            </p>
+
+            <a href="mri.html">
+
+                Read Article
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
 
         </div>
 
         <div class="article-card">
 
-            <h3>Ventilator Preventive Maintenance</h3>
+            <img src="images/patient-monitor.jpg"
+                 alt="Patient Monitor">
 
-            <p>Daily, weekly and monthly PM checklist for ICU ventilators.</p>
+            <h3>
 
-            <a href="#">Read Article →</a>
+                Patient Monitor Guide
+
+            </h3>
+
+            <p>
+
+                Understand ECG,
+                SpO₂,
+                NIBP,
+                respiration,
+                alarms and troubleshooting.
+
+            </p>
+
+            <a href="patient-monitor.html">
+
+                Read Article
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
 
         </div>
 
         <div class="article-card">
 
-            <h3>Biomedical Internship Tips</h3>
+            <img src="images/ventilator.jpg"
+                 alt="Ventilator">
 
-            <p>Essential knowledge every Biomedical Engineering student should know before hospital internship.</p>
+            <h3>
 
-            <a href="#">Read Article →</a>
+                Ventilator Basics
+
+            </h3>
+
+            <p>
+
+                Study ventilation modes,
+                sensors,
+                alarms,
+                maintenance and clinical applications.
+
+            </p>
+
+            <a href="ventilator.html">
+
+                Read Article
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
 
         </div>
 
     </div>
 
 </section>
-
 <!-- ==========================================
-     NEWSLETTER
+     NEWSLETTER SECTION
 ========================================== -->
 
 <section class="newsletter">
 
     <div class="newsletter-box">
 
-        <h2>Stay Updated</h2>
+        <h2>
+
+            Stay Updated with BioMed Learn
+
+        </h2>
 
         <p>
 
-            Get new biomedical articles, internship notes and equipment updates directly.
+            Subscribe to receive the latest biomedical engineering
+            articles, internship resources, calculators and equipment
+            updates directly in your inbox.
 
         </p>
 
-        <form>
+        <form action="#">
 
             <input
                 type="email"
-                placeholder="Enter your email address">
+                placeholder="Enter your Email Address"
+                required>
 
-            <button class="btn btn-primary">
+            <button
+                type="submit"
+                class="btn btn-primary">
 
                 Subscribe
 
@@ -501,58 +812,154 @@
 
     <div class="footer-container">
 
+        <!-- About -->
+
         <div class="footer-about">
 
-            <h2>BioMed Learn</h2>
+            <div class="logo">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <span>BioMed Learn</span>
+
+            </div>
 
             <p>
 
-                A learning platform created for Biomedical Engineering students to learn equipment,
-                internship skills, troubleshooting and career guidance.
+                BioMed Learn is a modern Biomedical Engineering
+                learning platform designed to help students,
+                interns and biomedical professionals learn
+                medical equipment in a practical and easy way.
 
             </p>
 
         </div>
 
-        <div class="footer-links">
-
-            <h3>Quick Links</h3>
-
-            <a href="#">Home</a>
-            <a href="equipment.html">Equipment</a>
-            <a href="internship.html">Internship</a>
-            <a href="notes.html">Notes</a>
-            <a href="calculators.html">Calculators</a>
-
-        </div>
+        <!-- Quick Links -->
 
         <div class="footer-links">
 
-            <h3>Resources</h3>
+            <h3>
 
-            <a href="#">Articles</a>
-            <a href="#">Projects</a>
-            <a href="#">Downloads</a>
-            <a href="#">Interview Questions</a>
-            <a href="#">Contact</a>
+                Quick Links
+
+            </h3>
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+            <a href="equipment.html">
+
+                Equipment
+
+            </a>
+
+            <a href="internship.html">
+
+                Internship
+
+            </a>
+
+            <a href="calculators.html">
+
+                Calculators
+
+            </a>
+
+            <a href="notes.html">
+
+                Notes
+
+            </a>
 
         </div>
+
+        <!-- Learn -->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Learn
+
+            </h3>
+
+            <a href="mri.html">
+
+                MRI Scanner
+
+            </a>
+
+            <a href="patient-monitor.html">
+
+                Patient Monitor
+
+            </a>
+
+            <a href="ventilator.html">
+
+                Ventilator
+
+            </a>
+
+            <a href="ct.html">
+
+                CT Scanner
+
+            </a>
+
+            <a href="cathlab.html">
+
+                Cath Lab
+
+            </a>
+
+        </div>
+
+        <!-- Social -->
 
         <div class="footer-social">
 
-            <h3>Follow Us</h3>
+            <h3>
+
+                Follow Us
+
+            </h3>
 
             <div class="social-icons">
 
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#">
 
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                    <i class="fab fa-facebook-f"></i>
 
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                </a>
 
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#">
 
-                <a href="#"><i class="fab fa-github"></i></a>
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fab fa-github"></i>
+
+                </a>
 
             </div>
 
@@ -562,7 +969,11 @@
 
     <div class="copyright">
 
-        © 2026 BioMed Learn. All Rights Reserved.
+        © 2026 BioMed Learn.
+
+        All Rights Reserved.
+
+        Designed with ❤️ for Biomedical Engineering Students.
 
     </div>
 
@@ -572,18 +983,15 @@
      JAVASCRIPT
 ========================================== -->
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 
+<!-- GSAP ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<!-- Main JS -->
 <script src="js/script.js"></script>
-
-<script src="js/menu.js"></script>
-
-<script src="js/animations.js"></script>
-
-<script src="js/search.js"></script>
 
 </body>
 
 </html>
-
- 
