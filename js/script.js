@@ -1,69 +1,443 @@
-console.log("BioMed Learn V3.0 Loaded Successfully");
+/* ======================================================
+   BioMed Learn V3.1
+   Professional JavaScript
+====================================================== */
 
-/* ==========================================
-   CARD 3D HOVER EFFECT
-========================================== */
+"use strict";
 
-const cards = document.querySelectorAll(".equipment-card");
+console.clear();
+console.log("✅ BioMed Learn V3.1 Loaded");
 
-cards.forEach(card => {
+/* ======================================================
+   GSAP
+====================================================== */
 
-    card.addEventListener("mousemove", (e) => {
+if (typeof gsap !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
-        const rect = card.getBoundingClientRect();
+/* ======================================================
+   DOM Elements
+====================================================== */
 
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+const header = document.querySelector(".header");
+const navbar = document.querySelector(".navbar");
+const menuBtn = document.querySelector(".menu-btn");
+const progressBar = document.getElementById("progress-bar");
 
-        const rotateY = (x / rect.width - 0.5) * 10;
-        const rotateX = -(y / rect.height - 0.5) * 10;
+/* ======================================================
+   Sticky Header
+====================================================== */
 
-        card.style.transform = `
-            perspective(1000px)
-            rotateX(${rotateX}deg)
-            rotateY(${rotateY}deg)
-            translateY(-10px)
-            scale(1.02)
-        `;
+function updateHeader() {
+
+    if (!header) return;
+
+    if (window.scrollY > 60) {
+
+        header.classList.add("sticky");
+
+    } else {
+
+        header.classList.remove("sticky");
+
+    }
+
+}
+
+/* ======================================================
+   Scroll Progress Bar
+====================================================== */
+
+function updateProgressBar() {
+
+    if (!progressBar) return;
+
+    const scrollTop =
+        document.documentElement.scrollTop;
+
+    const pageHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        (scrollTop / pageHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+}
+
+/* ======================================================
+   Scroll Events
+====================================================== */
+
+window.addEventListener("scroll", () => {
+
+    updateHeader();
+
+    updateProgressBar();
+
+});
+
+/* ======================================================
+   Mobile Navigation
+====================================================== */
+
+if (menuBtn && navbar) {
+
+    menuBtn.addEventListener("click", () => {
+
+        navbar.classList.toggle("active");
+
+        menuBtn.classList.toggle("active");
 
     });
 
-    card.addEventListener("mouseleave", () => {
+}
 
-        card.style.transform = `
-            perspective(1000px)
-            rotateX(0deg)
-            rotateY(0deg)
-            translateY(0)
-            scale(1)
-        `;
+/* ======================================================
+   Close Navigation
+====================================================== */
+
+document.querySelectorAll(".navbar a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if (navbar) {
+
+            navbar.classList.remove("active");
+
+        }
+
+        if (menuBtn) {
+
+            menuBtn.classList.remove("active");
+
+        }
 
     });
 
 });
 
+/* ======================================================
+   Button Vibration
+====================================================== */
 
-/* ==========================================
-   MOBILE VIBRATION
-========================================== */
+document.querySelectorAll(".btn").forEach(btn => {
 
-if ("vibrate" in navigator) {
+    btn.addEventListener("click", () => {
 
-    document.querySelectorAll(".btn").forEach(btn => {
+        if ("vibrate" in navigator) {
 
-        btn.addEventListener("click", () => {
+            navigator.vibrate(15);
 
-            navigator.vibrate(18);
+        }
+
+    });
+
+});
+
+/* ======================================================
+   Hero Animation
+   (Without Timeline)
+====================================================== */
+
+window.addEventListener("load", () => {
+
+    if (typeof gsap === "undefined") return;
+
+    gsap.from(".hero-tag", {
+
+        y: -40,
+
+        opacity: 0,
+
+        duration: 0.8,
+
+        ease: "power2.out"
+
+    });
+
+    gsap.from(".hero h1", {
+
+        y: 50,
+
+        opacity: 0,
+
+        duration: 1,
+
+        delay: 0.2,
+
+        ease: "power3.out"
+
+    });
+
+    gsap.from(".hero p", {
+
+        y: 40,
+
+        opacity: 0,
+
+        duration: 0.8,
+
+        delay: 0.45
+
+    });
+
+    gsap.from(".hero-buttons .btn", {
+
+        y: 20,
+
+        opacity: 0,
+
+        duration: 0.6,
+
+        delay: 0.8,
+
+        stagger: 0.15,
+
+        ease: "power2.out",
+
+        clearProps: "opacity,transform"
+
+    });
+
+});
+/* ======================================================
+   Scroll Reveal Animations
+====================================================== */
+
+window.addEventListener("load", () => {
+
+    if (typeof gsap === "undefined") return;
+
+    /* Featured Equipment */
+
+    gsap.utils.toArray(".equipment-card").forEach((card) => {
+
+        gsap.from(card, {
+
+            scrollTrigger: {
+
+                trigger: card,
+
+                start: "top 85%",
+
+                toggleActions: "play none none none"
+
+            },
+
+            y: 60,
+
+            opacity: 0,
+
+            duration: 0.8,
+
+            ease: "power2.out"
 
         });
 
     });
 
-    document.querySelectorAll(".equipment-card").forEach(card => {
+    /* Categories */
 
-        card.addEventListener("click", () => {
+    gsap.utils.toArray(".category-box").forEach((box) => {
 
-            navigator.vibrate(12);
+        gsap.from(box, {
+
+            scrollTrigger: {
+
+                trigger: box,
+
+                start: "top 85%"
+
+            },
+
+            scale: 0.9,
+
+            opacity: 0,
+
+            duration: 0.6,
+
+            ease: "back.out(1.5)"
+
+        });
+
+    });
+
+    /* Internship Section */
+
+    gsap.from(".internship-content", {
+
+        scrollTrigger: {
+
+            trigger: ".internship-content",
+
+            start: "top 80%"
+
+        },
+
+        y: 70,
+
+        opacity: 0,
+
+        duration: 1
+
+    });
+
+    /* Latest Posts */
+
+    gsap.utils.toArray(".article-card").forEach((card) => {
+
+        gsap.from(card, {
+
+            scrollTrigger: {
+
+                trigger: card,
+
+                start: "top 85%"
+
+            },
+
+            y: 50,
+
+            opacity: 0,
+
+            duration: 0.8
+
+        });
+
+    });
+
+    /* Newsletter */
+
+    gsap.from(".newsletter-box", {
+
+        scrollTrigger: {
+
+            trigger: ".newsletter",
+
+            start: "top 85%"
+
+        },
+
+        scale: 0.96,
+
+        opacity: 0,
+
+        duration: 0.9
+
+    });
+
+    /* Footer */
+
+    gsap.from("footer", {
+
+        scrollTrigger: {
+
+            trigger: "footer",
+
+            start: "top 95%"
+
+        },
+
+        y: 40,
+
+        opacity: 0,
+
+        duration: 0.8
+
+    });
+
+});
+/* ======================================================
+   Animated Statistics Counter
+====================================================== */
+
+const counters = document.querySelectorAll(".stat-box h2");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+
+        const target =
+            parseInt(counter.dataset.target) ||
+            parseInt(counter.textContent.replace(/\D/g, ""));
+
+        const suffix =
+            counter.textContent.replace(/[0-9]/g, "");
+
+        let current = 0;
+
+        const increment = Math.max(1, Math.ceil(target / 80));
+
+        const timer = setInterval(() => {
+
+            current += increment;
+
+            if (current >= target) {
+
+                current = target;
+
+                clearInterval(timer);
+
+            }
+
+            counter.textContent = current + suffix;
+
+        }, 20);
+
+        counterObserver.unobserve(counter);
+
+    });
+
+}, {
+
+    threshold: 0.5
+
+});
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
+
+});
+
+/* ======================================================
+   Search Box
+====================================================== */
+
+const searchInput =
+    document.querySelector(".search-box input");
+
+const equipmentCards =
+    document.querySelectorAll(".equipment-card");
+
+if (searchInput) {
+
+    searchInput.addEventListener("keyup", () => {
+
+        const value =
+            searchInput.value.toLowerCase();
+
+        equipmentCards.forEach(card => {
+
+            const text =
+                card.innerText.toLowerCase();
+
+            if (text.includes(value)) {
+
+                card.style.display = "";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
 
         });
 
@@ -71,134 +445,175 @@ if ("vibrate" in navigator) {
 
 }
 
+/* ======================================================
+   Active Navigation
+====================================================== */
 
-/* ==========================================
-   GSAP HERO ANIMATION
-========================================== */
-/*
-gsap.from(".hero-tag", {
+const navLinks =
+    document.querySelectorAll(".navbar a");
 
-    y: -30,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power2.out"
+navLinks.forEach(link => {
 
-});
+    link.addEventListener("click", () => {
 
-gsap.from(".hero h1", {
+        navLinks.forEach(item =>
+            item.classList.remove("active"));
 
-    y: 80,
-    opacity: 0,
-    duration: 1.2,
-    delay: 0.2,
-    ease: "power4.out"
+        link.classList.add("active");
+
+    });
 
 });
 
-gsap.from(".hero p", {
+/* ======================================================
+   Equipment Card Hover
+====================================================== */
 
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    delay: 0.5,
-    ease: "power3.out"
+document.querySelectorAll(".equipment-card").forEach(card => {
 
-});
+    card.addEventListener("mouseenter", () => {
 
+        card.style.transform =
+            "translateY(-10px)";
 
-/* ==========================================
-   HERO BUTTONS ONLY
-========================================== */
-/*
-gsap.from(".hero-buttons .btn", {
+    });
 
-    y: 40,
-    opacity: 0,
-    scale: 0.9,
-    duration: 0.8,
-    delay: 0.8,
-    stagger: 0.15,
-    ease: "back.out(1.7)"
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform =
+            "translateY(0px)";
+
+    });
 
 });
 
+/* ======================================================
+   Button Hover Animation
+====================================================== */
 
-/* ==========================================
-   FEATURED EQUIPMENT
-========================================== */
-/*
-gsap.from(".equipment-card", {
+document.querySelectorAll(".btn").forEach(btn => {
 
-    y: 70,
-    opacity: 0,
-    duration: 0.8,
-    delay: 1.1,
-    stagger: 0.12,
-    ease: "power2.out"
+    btn.addEventListener("mouseenter", () => {
+
+        btn.style.transform =
+            "translateY(-4px) scale(1.02)";
+
+    });
+
+    btn.addEventListener("mouseleave", () => {
+
+        btn.style.transform =
+            "translateY(0px) scale(1)";
+
+    });
+
+});
+/* ======================================================
+   Back To Top Button
+====================================================== */
+
+const backToTop = document.querySelector(".back-to-top");
+
+if (backToTop) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 400) {
+
+            backToTop.classList.add("show");
+
+        } else {
+
+            backToTop.classList.remove("show");
+
+        }
+
+    });
+
+    backToTop.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+/* ======================================================
+   Lazy Loading Images
+====================================================== */
+
+const images = document.querySelectorAll("img");
+
+images.forEach(img => {
+
+    img.loading = "lazy";
+
+    img.decoding = "async";
 
 });
 
+/* ======================================================
+   Refresh ScrollTrigger
+====================================================== */
 
-/* ==========================================
-   CATEGORY BOXES
-========================================== */
-/*
-gsap.from(".category-box", {
+window.addEventListener("load", () => {
 
-    y: 60,
-    opacity: 0,
-    duration: 0.7,
-    delay: 1.4,
-    stagger: 0.08,
-    ease: "power2.out"
+    if (typeof ScrollTrigger !== "undefined") {
+
+        ScrollTrigger.refresh();
+
+    }
 
 });
 
+/* ======================================================
+   Resize Refresh
+====================================================== */
 
-/* ==========================================
-   ARTICLE CARDS
-========================================== */
-/*
-gsap.from(".article-card", {
+window.addEventListener("resize", () => {
 
-    y: 60,
-    opacity: 0,
-    duration: 0.8,
-    delay: 1.6,
-    stagger: 0.1,
-    ease: "power2.out"
+    if (typeof ScrollTrigger !== "undefined") {
+
+        ScrollTrigger.refresh();
+
+    }
 
 });
 
+/* ======================================================
+   Prevent Image Drag
+====================================================== */
 
-/* ==========================================
-   STATS
-========================================== */
-/*
-gsap.from(".stat-box", {
+document.querySelectorAll("img").forEach(img => {
 
-    scale: 0.8,
-    opacity: 0,
-    duration: 0.8,
-    delay: 1.8,
-    stagger: 0.1,
-    ease: "back.out(1.5)"
+    img.setAttribute("draggable", "false");
 
 });
 
+/* ======================================================
+   Performance
+====================================================== */
 
-/* ==========================================
-   INTERNSHIP SECTION
-========================================== */
-/*
-gsap.from(".inte rnship-content", {
+window.addEventListener("pageshow", () => {
 
-    y: 70,
-    opacity: 0,
-    duration: 1,
-    delay: 2,
-    ease: "power2.out"
+    if (typeof ScrollTrigger !== "undefined") {
 
-});*/
+        ScrollTrigger.refresh();
 
-console.log("Animations Loaded Successfully");
+    }
+
+});
+
+/* ======================================================
+   End
+====================================================== */
+
+console.log("🚀 BioMed Learn Ready");

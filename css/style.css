@@ -373,7 +373,7 @@ section{
 }
 
 /* ==========================================
-   BUTTONS
+   HERO BUTTONS
 ========================================== */
 
 .hero-buttons{
@@ -382,9 +382,15 @@ section{
 
     justify-content:center;
 
+    align-items:center;
+
     gap:24px;
 
     flex-wrap:wrap;
+
+    position:relative;
+
+    z-index:10;
 
 }
 
@@ -406,57 +412,19 @@ section{
 
     border-radius:50px;
 
+    text-decoration:none;
+
     font-size:17px;
 
     font-weight:600;
 
     cursor:pointer;
 
+    position:relative;
+
+    overflow:hidden;
+
     transition:all .35s ease;
-
-}
-
-/* Primary */
-
-.btn-primary{
-
-    background:#ffffff;
-
-    color:var(--primary);
-
-    box-shadow:0 15px 35px rgba(0,0,0,.18);
-
-}
-
-.btn-primary:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:0 22px 45px rgba(0,0,0,.22);
-
-}
-
-/* Outline */
-
-.btn-outline{
-
-    color:#ffffff;
-
-    border:2px solid rgba(255,255,255,.85);
-
-    background:rgba(255,255,255,.12);
-
-    backdrop-filter:blur(15px);
-
-}
-
-.btn-outline:hover{
-
-    background:#ffffff;
-
-    color:var(--primary);
-
-    transform:translateY(-6px);
 
 }
 
@@ -466,6 +434,61 @@ section{
 
 }
 
+.btn span{
+
+    display:inline-block;
+
+}
+
+/* Primary Button */
+
+.btn-primary{
+
+    background:#ffffff;
+
+    color:#0D6EFD;
+
+    border:none;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.btn-primary:hover{
+
+    background:#ffffff;
+
+    color:#0D6EFD;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 22px 45px rgba(0,0,0,.25);
+
+}
+
+/* Outline Button */
+
+.btn-outline{
+
+    background:rgba(255,255,255,.12);
+
+    color:#ffffff;
+
+    border:2px solid rgba(255,255,255,.85);
+
+    backdrop-filter:blur(12px);
+
+}
+
+.btn-outline:hover{
+
+    background:#ffffff;
+
+    color:#0D6EFD;
+
+    transform:translateY(-6px);
+
+}
 /* ==========================================
    SMOOTH EFFECTS
 ========================================== */
@@ -1646,5 +1669,79 @@ input{
     z-index:99999;
 
     transition:width .15s linear;
+
+}
+/* Sticky Header */
+
+.header.sticky{
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+.back-to-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#0D6EFD;
+
+    color:#ffffff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:.35s;
+
+    z-index:999;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+}
+
+.back-to-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.back-to-top:hover{
+
+    background:#0056d6;
+
+    transform:translateY(-5px);
 
 }
