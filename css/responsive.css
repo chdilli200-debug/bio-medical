@@ -130,3 +130,274 @@ section{
 }
 
 }
+/* ==============================
+   Mobile (768px)
+============================== */
+
+@media (max-width:768px){
+
+.header{
+
+    height:70px;
+
+    padding:0 20px;
+
+}
+
+/* Mobile Menu */
+
+.navbar{
+
+    position:fixed;
+
+    top:70px;
+
+    right:-100%;
+
+    width:280px;
+
+    height:calc(100vh - 70px);
+
+    background:rgba(255,255,255,.97);
+
+    backdrop-filter:blur(20px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:35px 25px;
+
+    gap:25px;
+
+    transition:.4s ease;
+
+    box-shadow:-10px 0 30px rgba(0,0,0,.08);
+
+}
+
+.navbar.active{
+
+    right:0;
+
+}
+
+.menu-btn{
+
+    display:block;
+
+    font-size:30px;
+
+    color:var(--primary);
+
+}
+
+/* Hero */
+
+.hero{
+
+    min-height:90vh;
+
+    padding:120px 20px 60px;
+
+}
+
+.hero h1{
+
+    font-size:36px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    width:100%;
+
+}
+
+.hero-buttons .btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+/* Search */
+
+.search-section{
+
+    padding:60px 20px;
+
+}
+
+.search-box{
+
+    padding:18px;
+
+}
+
+.search-box input{
+
+    font-size:16px;
+
+}
+
+.search-box button{
+
+    width:100%;
+
+}
+
+/* Cards */
+
+.equipment-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.category-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.article-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.footer-container{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.social-icons{
+
+    justify-content:center;
+
+}
+
+.internship-content{
+
+    padding:35px 25px;
+
+}
+
+.internship-content h2{
+
+    font-size:30px;
+
+}
+
+.newsletter form{
+
+    flex-direction:column;
+
+}
+
+.newsletter input{
+
+    width:100%;
+
+}
+
+.newsletter button{
+
+    width:100%;
+
+}
+
+}
+
+/* ==============================
+   Small Mobile (480px)
+============================== */
+
+@media (max-width:480px){
+
+.hero h1{
+
+    font-size:30px;
+
+}
+
+.hero p{
+
+    font-size:15px;
+
+}
+
+.section-title h2{
+
+    font-size:28px;
+
+}
+
+.logo{
+
+    font-size:22px;
+
+}
+
+.logo i{
+
+    font-size:28px;
+
+}
+
+.equipment-card{
+
+    padding:25px;
+
+}
+
+.category-box{
+
+    font-size:18px;
+
+    padding:25px 20px;
+
+}
+
+.article-card{
+
+    padding:25px;
+
+}
+
+.stat-box h2{
+
+    font-size:42px;
+
+}
+
+.btn{
+
+    padding:14px 25px;
+
+    font-size:15px;
+
+}
+
+}
